@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Break Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <h2>☕ Break & Relax</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="break.html">Break Time</a>
+        <a href="tips.html">Tips</a>
+    </div>
+</nav>
+
+<section class="container center">
+    <h1>Focus & Take a Break 🌿</h1>
+
+    <div class="timer-box">
+        <h2 id="timer">25:00</h2>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+        <p id="timerMessage">Ready to focus?</p>
+    </div>
+
+    <h2>How are you feeling today?</h2>
+
+    <div class="moods">
+        <button onclick="setMood('Happy 😊')">😊 Happy</button>
+        <button onclick="setMood('Okay 🙂')">🙂 Okay</button>
+        <button onclick="setMood('Stressed 😟')">😟 Stressed</button>
+        <button onclick="setMood('Tired 😴')">😴 Tired</button>
+    </div>
+
+    <h3 id="moodResult">Choose your mood</h3>
+
+    <p>Remember: Your health and rest are important too!</p>
+    <!-- DAILY WELLNESS REMINDERS -->
+
+<div class="wellness-section" id="wellness">
+
+    <h1>🌸 My Daily Wellness</h1>
+    <p>Take care of yourself while preparing for exams.</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>💧 Water Reminder</h3>
+            <p>Remind me to drink water.</p>
+            <label>Reminder interval</label>
+            <select id="waterInterval">
+                <option value="30">Every 30 minutes</option>
+                <option value="60" selected>Every 60 minutes</option>
+                <option value="90">Every 90 minutes</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <h3>🍎 Meal Reminders</h3>
+            <label>Breakfast</label>
+            <input type="time" id="breakfastTime" value="08:00">
+
+            <label>Lunch</label>
+            <input type="time" id="lunchTime" value="13:00">
+
+            <label>Dinner</label>
+            <input type="time" id="dinnerTime" value="20:00">
+        </div>
+
+        <div class="card">
+            <h3>🌙 Sleep Reminder</h3>
+            <p>Set your bedtime reminder.</p>
+            <label>My sleeping time</label>
+            <input type="time" id="sleepTime" value="22:30">
+        </div>
+
+        <div class="card">
+            <h3>☕ Study Break</h3>
+            <p>Remember to take a short break.</p>
+            <label>Break interval</label>
+            <select id="breakInterval">
+                <option value="30">Every 30 minutes</option>
+                <option value="45" selected>Every 45 minutes</option>
+                <option value="60">Every 60 minutes</option>
+            </select>
+        </div>
+
+    </div>
+
+    <button onclick="enableReminders()">
+        🔔 Enable My Reminders
+    </button>
+
+    <button onclick="disableReminders()">
+        Turn Off Reminders
+    </button>
+
+    <h3 id="reminderStatus">
+        Your reminders are currently off.
+    </h3>
+
+    <div class="card">
+        <h3>✨ Today's Wellness Checklist</h3>
+
+        <label><input type="checkbox"> I drank enough water.</label>
+        <label><input type="checkbox"> I had my meals on time.</label>
+        <label><input type="checkbox"> I took study breaks.</label>
+        <label><input type="checkbox"> I followed my sleep routine.</label>
+    </div>
+
+</div>
+</section>
+
+<footer>
+    Take a breath. You are doing your best! ❤️
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

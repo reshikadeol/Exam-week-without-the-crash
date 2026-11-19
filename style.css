@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f5ff;
+    color: #333;
+    line-height: 1.6;
+}
+
+nav {
+    background: #7565a8;
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+nav h2 {
+    font-size: 21px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffe5a8;
+}
+
+.hero {
+    text-align: center;
+    padding: 90px 20px;
+    background: linear-gradient(135deg, #e7ddff, #d9efff);
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #51447f;
+}
+
+.hero p {
+    margin: 12px;
+}
+
+.btn, button {
+    display: inline-block;
+    background: #7565a8;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.btn:hover, button:hover {
+    background: #574981;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
+}
+
+.container h1, .container h2 {
+    color: #51447f;
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.card, .planner-box, .timer-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #00000012;
+}
+
+.card h3 {
+    color: #7565a8;
+    margin-bottom: 12px;
+}
+
+.card a {
+    display: inline-block;
+    color: #7565a8;
+    margin-top: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.task {
+    background: #f0edff;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-wrap: anywhere;
+}
+
+.task input {
+    width: auto;
+    margin: 0;
+}
+
+.task span {
+    flex: 1;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.timer-box {
+    max-width: 400px;
+    margin: 25px auto;
+    background: #e8e0ff;
+}
+
+#timer {
+    font-size: 55px;
+    color: #574981;
+}
+
+.center {
+    text-align: center;
+}
+
+.moods {
+    margin: 20px;
+}
+
+footer {
+    background: #7565a8;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+}
+
+@media(max-width: 650px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+/* DAILY WELLNESS DESIGN */
+
+.wellness-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 25px;
+    text-align: center;
+}
+
+.wellness-section h1 {
+    color: #574981;
+    margin-bottom: 12px;
+}
+
+.wellness-section .card {
+    text-align: left;
+}
+
+.wellness-section label {
+    display: block;
+    margin: 12px 0;
+}
+
+.wellness-section select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+}
+
+.wellness-section input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-right: 8px;
+}
+
+#reminderStatus {
+    background: #e8e0ff;
+    color: #574981;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}

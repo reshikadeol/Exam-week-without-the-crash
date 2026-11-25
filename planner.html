@@ -28,8 +28,21 @@
         <button onclick="addTask()">Add Task +</button>
 
         <h2>My Study Tasks</h2>
-        <div id="taskList"></div>
-        <p id="progress"></p>
+
+<div class="progress-section">
+    <div class="progress-heading">
+        <h3>My Study Progress</h3>
+        <span id="progressPercent">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div id="progressFill"></div>
+    </div>
+
+    <p id="progress">Completed: 0 / 0</p>
+</div>
+
+<div id="taskList"></div>
     </div>
 </section>
 

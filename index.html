@@ -1,62 +1,347 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Exam Week Without Crash</title>
+
+    <!-- Existing CSS file -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Home page styling -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #faf8ff;
+            color: #353044;
+        }
+
+        .home-header {
+            background: #7560a8;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .home-header h2 {
+            margin: 0;
+            font-size: 23px;
+        }
+
+        .home-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .home-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .home-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .home-hero {
+            text-align: center;
+            padding: 65px 20px 45px;
+            background: linear-gradient(135deg, #eee8ff, #f9f4ff);
+        }
+
+        .home-hero h1 {
+            color: #60458f;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .home-hero p {
+            max-width: 650px;
+            margin: 10px auto;
+            line-height: 1.7;
+            color: #625b70;
+            font-size: 16px;
+        }
+
+        .home-content {
+            max-width: 1150px;
+            margin: 45px auto;
+            padding: 0 22px;
+        }
+
+        .home-content h2 {
+            color: #51406f;
+            margin-bottom: 25px;
+            font-size: 25px;
+        }
+
+        .home-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .home-feature-card {
+            background: white;
+            border: 1px solid #eee8f7;
+            border-radius: 15px;
+            padding: 25px;
+            min-height: 190px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 14px rgba(70, 50, 100, 0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .home-feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(70, 50, 100, 0.13);
+        }
+
+        .home-feature-card h3 {
+            color: #60458f;
+            font-size: 20px;
+            margin: 0 0 13px;
+        }
+
+        .home-feature-card p {
+            color: #625d6b;
+            line-height: 1.6;
+            margin: 0 0 18px;
+            flex-grow: 1;
+        }
+
+        .home-feature-card a {
+            color: #7053a5;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .home-feature-card a:hover {
+            text-decoration: underline;
+        }
+
+        .home-about {
+            margin-top: 55px;
+            padding: 30px;
+            background: #f0eaff;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .home-about h2 {
+            color: #60458f;
+            margin-bottom: 12px;
+        }
+
+        .home-about p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.8;
+            color: #5d5669;
+        }
+
+        .home-footer {
+            background: #29243d;
+            color: white;
+            text-align: center;
+            padding: 23px 15px;
+            margin-top: 60px;
+            line-height: 1.8;
+        }
+
+        .home-footer p {
+            margin: 3px;
+        }
+
+        @media (max-width: 800px) {
+            .home-card-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .home-hero h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .home-card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .home-header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .home-nav {
+                justify-content: center;
+            }
+
+            .home-hero {
+                padding: 45px 18px;
+            }
+        }
+        /* Center the fourth card */
+.home-feature-card:nth-child(4) {
+    grid-column: 2 / 3;
+}
+
+@media (max-width: 800px) {
+    .home-feature-card:nth-child(4) {
+        grid-column: auto;
+    }
+}
+    </style>
 </head>
+
 <body>
 
-<nav>
-    <h2>🌸 Exam Week Without Crash</h2>
-    <div>
-        <a href="index.html">Home</a>
-        <a href="planner.html">Study Planner</a>
-        <a href="break.html">Break Time</a>
-        <a href="tips.html">Exam Tips</a>
-    </div>
-</nav>
+    <!-- Website Header -->
+    <header class="home-header">
 
-<section class="hero">
-    <h1>Study Smart, Stay Calm!</h1>
-    <p>Your exam week doesn't have to be stressful.</p>
-    <p>Plan your studies, take breaks and prepare with confidence.</p>
+        <h2>Exam Week Without Crash</h2>
 
-    <a class="btn" href="planner.html">Create My Study Plan</a>
-</section>
+        <nav class="home-nav">
+            <a href="index.html">Home</a>
+            <a href="planner.html">Study Planner</a>
+            <a href="break.html">Break Time</a>
+            <a href="tips.html">Exam Tips</a>
+            <a href="wellness.html">Daily Wellness</a>
+        </nav>
 
-<section class="container">
-    <h2>What do you need today?</h2>
+    </header>
 
-    <div class="cards">
-        <div class="card">
-            <h3>📚 Study Planner</h3>
-            <p>Organize subjects and manage study time.</p>
-            <a href="planner.html">Explore →</a>
-        </div>
 
-        <div class="card">
-            <h3>☕ Take a Break</h3>
-            <p>Take small breaks between study sessions.</p>
-            <a href="break.html">Explore →</a>
-        </div>
+    <!-- Welcome Section -->
+    <section class="home-hero">
 
-        <div class="card">
-            <h3>💡 Exam Tips</h3>
-            <p>Learn simple ways to prepare for exams.</p>
-            <a href="tips.html">Explore →</a>
-        </div>
-    </div>
-    <div class="card">
-    <h3>🌸 Daily Wellness</h3>
-    <p>Manage your water, meals, sleep and study breaks.</p>
-    <a href="break.html#wellness">Manage My Routine →</a>
-</div>
-</section>
+        <h1>Exam Week Without Crash 💜</h1>
 
-<footer>
-    <p>Made for students, by students ❤️</p>
-    <p>Exam Week Without Crash © 2026</p>
-</footer>
+        <p>
+            Exam preparation is not just about studying.
+            It is also about managing your time, taking breaks
+            and looking after your health.
+        </p>
+
+        <p>
+            Plan better, stay balanced and make your exam week easier!
+        </p>
+
+    </section>
+
+
+    <!-- Main Features -->
+    <main class="home-content">
+
+        <h2>What do you need today?</h2>
+
+        <section class="home-card-grid">
+
+            <!-- Study Planner Card -->
+            <div class="home-feature-card">
+
+                <h3>📚 Study Planner</h3>
+
+                <p>
+                    Organize subjects and manage study time.
+                </p>
+
+                <a href="planner.html">Explore →</a>
+
+            </div>
+
+
+            <!-- Break Time Card -->
+            <div class="home-feature-card">
+
+                <h3>🌿 Take a Break</h3>
+
+                <p>
+                    Take small breaks between study sessions.
+                </p>
+
+                <a href="break.html">Explore →</a>
+
+            </div>
+
+
+            <!-- Exam Tips Card -->
+            <div class="home-feature-card">
+
+                <h3>💡 Exam Tips</h3>
+
+                <p>
+                    Learn simple ways to prepare for exams.
+                </p>
+
+                <a href="tips.html">Explore →</a>
+
+            </div>
+
+
+            <!-- Daily Wellness Card -->
+            <div class="home-feature-card">
+
+                <h3>🌸 Daily Wellness</h3>
+
+                <p>
+                    Manage your water, meals, sleep and study breaks.
+                </p>
+
+                <a href="wellness.html">Explore →</a>
+
+            </div>
+
+        </section>
+
+
+        <!-- About Project Section -->
+        <section class="home-about">
+
+            <h2>About Our Project</h2>
+
+            <p>
+                Exam Week Without Crash is a student-focused project
+                designed to make exam preparation more balanced.
+                It provides simple tools for study planning, short
+                breaks, exam preparation tips and daily wellness.
+                Our aim is to encourage students to take care of
+                both their studies and their well-being.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Website Footer -->
+    <footer class="home-footer">
+
+        <p>Made for students, by students 💗</p>
+
+        <p>Exam Week Without Crash © 2026</p>
+
+    </footer>
+
+
+    <!-- Existing JavaScript file -->
+    <script src="script.js"></script>
 
 </body>
 </html>

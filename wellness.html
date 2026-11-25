@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Wellness | Exam Week Without Crash</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .wellness-container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        .wellness-hero {
+            text-align: center;
+            padding: 35px 20px;
+            background: #eee8ff;
+            border-radius: 18px;
+            margin-bottom: 25px;
+        }
+
+        .wellness-hero h1 {
+            color: #60439a;
+            margin-bottom: 12px;
+        }
+
+        .wellness-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .wellness-card {
+            background: white;
+            padding: 22px;
+            border-radius: 15px;
+            box-shadow: 0 3px 12px rgba(80, 50, 120, 0.10);
+        }
+
+        .wellness-card h3 {
+            color: #704ca5;
+            margin-bottom: 10px;
+        }
+
+        .wellness-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .wellness-card label {
+            display: block;
+            margin-top: 12px;
+            color: #444;
+        }
+
+        .wellness-card input {
+            margin-right: 8px;
+        }
+
+        .wellness-message {
+            background: #f5f0ff;
+            padding: 22px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .wellness-message h2 {
+            color: #60439a;
+        }
+
+        .progress-area {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        #wellnessProgress {
+            width: 100%;
+            max-width: 450px;
+            height: 12px;
+            accent-color: #8056b5;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 22px;
+            color: #704ca5;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Exam Week Without Crash</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="planner.html">Study Planner</a>
+            <a href="break.html">Break Time</a>
+            <a href="tips.html">Exam Tips</a>
+            <a href="wellness.html">Daily Wellness</a>
+        </nav>
+    </header>
+
+    <main class="wellness-container">
+
+        <section class="wellness-hero">
+            <h1>My Daily Wellness 🌸</h1>
+            <p>
+                Taking care of yourself is also an important part
+                of exam preparation.
+            </p>
+            <p>
+                Stay healthy, stay positive and study better!
+            </p>
+        </section>
+
+        <h2>Build Healthy Daily Habits</h2>
+        <p>Follow these simple habits during your exam week.</p>
+
+        <section class="wellness-grid">
+
+            <div class="wellness-card">
+                <h3>💧 Water Reminder</h3>
+                <p>Drink water regularly throughout the day.</p>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I drank enough water today
+                </label>
+            </div>
+
+            <div class="wellness-card">
+                <h3>🍎 Healthy Meals</h3>
+                <p>Do not skip your meals during busy study days.</p>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I had my breakfast
+                </label>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I had my lunch
+                </label>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I had my dinner
+                </label>
+            </div>
+
+            <div class="wellness-card">
+                <h3>😴 Proper Sleep</h3>
+                <p>Give your mind enough rest to stay fresh and focused.</p>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I followed a healthy sleep routine
+                </label>
+            </div>
+
+            <div class="wellness-card">
+                <h3>🌿 Study Breaks</h3>
+                <p>Take short breaks between study sessions.</p>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I took regular study breaks
+                </label>
+            </div>
+
+            <div class="wellness-card">
+                <h3>🚶 Physical Activity</h3>
+                <p>Spend a little time walking or stretching.</p>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I did some light physical activity
+                </label>
+            </div>
+
+            <div class="wellness-card">
+                <h3>💜 Mental Wellness</h3>
+                <p>Stay calm, take deep breaths and believe in yourself.</p>
+                <label>
+                    <input type="checkbox" class="habit">
+                    I took time to relax
+                </label>
+            </div>
+
+        </section>
+
+        <section class="progress-area">
+            <h2>My Daily Progress</h2>
+            <p id="progressText">0 out of 7 habits completed</p>
+            <progress id="wellnessProgress" value="0" max="7"></progress>
+        </section>
+
+        <section class="wellness-message">
+            <h2>A Gentle Reminder 💜</h2>
+            <p>
+                Your health matters as much as your marks.
+                Take care of yourself while preparing for exams.
+            </p>
+        </section>
+
+        <div style="text-align:center;">
+            <a href="index.html" class="back-home">← Back to Home</a>
+        </div>
+
+    </main>
+
+    <script>
+        const habits = document.querySelectorAll(".habit");
+        const progress = document.getElementById("wellnessProgress");
+        const progressText = document.getElementById("progressText");
+
+        habits.forEach((habit, index) => {
+            habit.checked =
+                localStorage.getItem("wellnessHabit" + index) === "true";
+
+            habit.addEventListener("change", () => {
+                localStorage.setItem(
+                    "wellnessHabit" + index,
+                    habit.checked
+                );
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            let completed = 0;
+
+            habits.forEach(habit => {
+                if (habit.checked) {
+                    completed++;
+                }
+            });
+
+            progress.value = completed;
+            progressText.textContent =
+                completed + " out of 7 habits completed";
+        }
+
+        updateProgress();
+    </script>
+
+</body>
+</html>

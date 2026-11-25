@@ -51,6 +51,8 @@ function deleteTask(index) {
 function displayTasks() {
     let list = document.getElementById("taskList");
     let progress = document.getElementById("progress");
+    let percentText = document.getElementById("progressPercent");
+    let progressFill = document.getElementById("progressFill");
 
     if (!list) return;
 
@@ -69,7 +71,10 @@ function displayTasks() {
         details.textContent =
             task.subject + " - " + task.topic +
             " (" + task.time + ")";
-        if (task.completed) details.classList.add("done");
+
+        if (task.completed) {
+            details.classList.add("done");
+        }
 
         let remove = document.createElement("button");
         remove.textContent = "Delete";
@@ -79,16 +84,30 @@ function displayTasks() {
         list.appendChild(item);
     });
 
+    // Calculate study progress
     let completed = tasks.filter(t => t.completed).length;
+    let total = tasks.length;
 
+    let percentage = total === 0
+        ? 0
+        : Math.round((completed / total) * 100);
+
+    // Update progress text
     if (progress) {
         progress.textContent =
-            "Completed: " + completed + " / " + tasks.length;
+            "Completed: " + completed + " / " + total;
+    }
+
+    // Update percentage
+    if (percentText) {
+        percentText.textContent = percentage + "%";
+    }
+
+    // Update progress bar width
+    if (progressFill) {
+        progressFill.style.width = percentage + "%";
     }
 }
-
-displayTasks();
-
 
 // FOCUS TIMER
 
